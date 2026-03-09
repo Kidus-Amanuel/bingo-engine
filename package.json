@@ -5,7 +5,7 @@
   "main": "dist/engine.js",
   "type": "module",
   "scripts": {
-    "start": "tsx engine.ts",
+    "start": "npx tsx engine.ts",
     "dev": "tsx watch engine.ts",
     "build": "echo 'Build not required for TSX direct execution'"
   },
