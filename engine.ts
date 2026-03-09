@@ -135,5 +135,19 @@ async function processPlayingRoom(room: any) {
     await supabase.from('called_numbers').insert({ room_id: room.id, number: nextNumber });
 }
 
+// -------------------------------------------------------------------------
+// 🚀 RENDER HEALTH CHECK SERVER
+// -------------------------------------------------------------------------
+import http from 'http';
+
+const PORT = process.env.PORT || 3000;
+
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('🎱 Bingo Engine is Running...');
+}).listen(PORT, () => {
+    console.log(`📡 Health-check server listening on port ${PORT}`);
+});
+
 // Boot up
 runEngine();
