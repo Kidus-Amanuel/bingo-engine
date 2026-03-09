@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
  "scripts": {
-  "build": "esbuild engine.ts --bundle --platform=node --format=esm --outfile=dist/engine.js",
+  "build": "tsc",
   "start": "node dist/engine.js",
   "dev": "tsc --watch"
 },

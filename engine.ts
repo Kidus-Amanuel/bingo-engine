@@ -1,6 +1,9 @@
+import dotenv from 'dotenv';
+dotenv.config(); // this loads your .env variables
+
 import { createClient } from "@supabase/supabase-js";
-import 'dotenv/config';
 import http from 'http';
+
 
 // 🚀 START HEALTH CHECK SERVER IMMEDIATELY (For Render)
 const PORT = process.env.PORT || 3000;
