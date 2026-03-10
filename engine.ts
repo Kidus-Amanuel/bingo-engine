@@ -1,14 +1,13 @@
-import 'dotenv/config';
+require('dotenv').config();
 import { createClient } from "@supabase/supabase-js";
 import http from 'http';
 
-
-// 🚀 START HEALTH CHECK SERVER IMMEDIATELY (For Render)
+// 🚀 Railway Health Check Port (Optional but good)
 const PORT = process.env.PORT || 3000;
 http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('🎱 Bingo Engine is Running...');
-}).listen(PORT, () => {
+}).listen(Number(PORT), '0.0.0.0', () => {
     console.log(`📡 Health-check server listening on port ${PORT}`);
 });
 
